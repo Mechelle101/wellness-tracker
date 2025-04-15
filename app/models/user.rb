@@ -6,4 +6,8 @@ class User < ApplicationRecord
   has_many :reminders
   has_many :nutrition_logs
   has_many :supplements
+
+  def full_name
+    "#{f_name} #{l_name}"
+  end
 end
