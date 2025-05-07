@@ -1,0 +1,14 @@
+<h1>Entries Tagged: "<%= @category.name %>"</h1>
+
+<% if @entries.any? %>
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <strong><%= entry.date.strftime("%b %d, %Y") %>:</strong>
+      <%= entry.title %> - <%= entry.user.f_name %>
+    </li>
+  <% end %>
+</ul>
+<% else %>
+  <p>No entries found for this category.</p>
+<% end %>
