@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "User Dashboard", type: :request do
   it "display the user's dashboard with recent data" do
     user = User.create!(
-      f_name: "Mechelle", 
+      f_name: "Mechelle",
       l_name: "Presnell",
       email: "me@me.com",
       password_digest: "testpassword"

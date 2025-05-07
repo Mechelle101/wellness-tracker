@@ -11,5 +11,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @nutrition_logs = @user.nutrition_logs.order(created_at: :desc)
   end
-
 end
