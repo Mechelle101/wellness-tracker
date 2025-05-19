@@ -1,0 +1,20 @@
+<h1>Entry Summary - <%= @entry.date.strftime("%B %d, %Y") %> </h1>
+
+<p><string>User: </strong><%= @user.f_name %> <%= @user.l_name %></p>
+<p><string>Title: </strong><%= @entry.title %></p>
+<p><string>Mood: </strong><%= @entry.mood %>/10</p>
+<p><string>Energy Level: </strong><%= @entry.energy_level %>/10</p>
+<p><string>Sleep: </strong><%= @entry.sleep_hours %> hours</p>
+<p><string>Hydration: </strong><%= @entry.hydration_oz %> oz</p>
+<p><string>Notes: </strong><%= @entry.notes %></p>
+
+<h3>Tags:</h3>
+<% if @categories.any? %>
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= category.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No categories assigned.</p>
+<% end %> 

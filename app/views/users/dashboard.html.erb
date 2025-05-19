@@ -1,0 +1,30 @@
+<h1><%= @user.f_name %> <%= @user.l_name %>'s Dashboard</h1>
+<p><%= @user.email %> </p>
+
+<h2>Recent Entries</h2>
+<ul> 
+  <% @entries.each do |entry| %>
+    <li><strong><%= entry.date %>:</strong><%= entry.title %> - <%= entry.mood %>/10 mood</li>
+  <% end %>
+</ul>
+
+<h2>Nutrition Logs</h2>
+<ul> 
+  <% @nutrition_logs.each do |log| %>
+    <li><%= log.meal_type %>: <%= log.calories %> kcal (<%= log.protein_grm %>g protein)</li>
+  <% end %>
+</ul>
+
+<h2>Supplements</h2>
+<ul> 
+  <% @supplements.each do |supplement| %>
+    <li><%= supplement.name %> - <%= supplement.dose %> - <%= supplement.unit %></li>
+  <% end %>
+</ul>
+
+<h2>Upcoming Reminders</h2>
+<ul> 
+  <% @reminders.each do |reminder| %>
+    <li><%= reminder.title %> - <%= reminder.remind_at.strftime("%b %d, %I:%M %p") %></li>
+  <% end %>
+</ul>
